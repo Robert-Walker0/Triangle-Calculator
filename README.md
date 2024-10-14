@@ -15,23 +15,22 @@ Before downloading this program you should have the following things installed d
 * Lua 5.1 or higher. 
 * C++14 or higher. 
 
-
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Robert-Walker0/TriangleCalculators
+git clone https://github.com/Robert-Walker0/Lua-Triangle-Calculator.git
 ```
 2. Navigate to your project directory:
 ```bash
-cd triangle-calculators
+cd Lua-Triangle-Calculator-main
 ```
 
 ## Uninstalling 
 
 1. Delete the project directory:
 ```bash
-rmdir /s triangle-calculators
+rmdir /s Lua-Triangle-Calculator-main
 ```
 
 ## Usage
