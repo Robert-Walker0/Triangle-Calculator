@@ -47,7 +47,7 @@ rm -rf "Lua-Triangle-Calculator"
 
 ### Lua Version 
 
-To use the triangle calculator, run the `lua src/lua/main.lua` file and follow the prompts to enter the side lengths.
+To use the triangle calculator, run the command `lua src/lua/main.lua` file and follow the prompts to enter the side lengths.
 
 ### C++ Version
 
