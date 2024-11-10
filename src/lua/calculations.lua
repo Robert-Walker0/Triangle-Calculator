@@ -1,34 +1,30 @@
 require "math"
-require "io"
+require "input_utils"
+
 local Triangle = {}
 Triangle.__index = Triangle
 
-function getInput()
-	local value = io.read()
-	local results = tonumber(value)
-	if results == nil then
-		print("Expected number but got string")
-		return getInput()
-	elseif type(results) == "number" then
-		return results
-	end
-end
-
 function Triangle.createTriangle()
-	local triangle = setmetatable({}, Triangle)
-	print("Enter the 1st #: ")
-	triangle.side_one = getInput()
-	print("Enter the 2nd #: ")
-	triangle.side_two = getInput()
-	print("Enter the 3rd #: ")
-	triangle.side_three = getInput()
-	triangle.perimeter = triangle:getPerimeter()
-	triangle.area = triangle:getArea()
-		return triangle
+	local instance = setmetatable({}, Triangle)
+	instance.sides = {}
+
+	for sides=1, 3 do
+		print("Enter Side #" .. sides .. ": ")
+		local val = input_utils.getInput()
+		table.insert(instance.sides, val)
+	end
+
+	instance.perimeter = instance:getPerimeter()
+	instance.area = instance:getArea()
+	return instance
 end
 
 function Triangle:getPerimeter()
-	return self.side_one + self.side_two + self.side_three
+	local sum = 0
+	for side=1, #self.sides do 
+		sum = sum + self.sides[side]
+	end
+	return sum
 end
 
 function Triangle:getArea()
@@ -45,9 +41,7 @@ function Triangle:isTriangle()
 end
 
 function Triangle:printData()
-	print("Side #1 =" .. self.side_one)
-	print("Side #2 =" .. self.side_two)
-	print("Side #3 = " .. self.side_three)
+	print("A =" .. self.sides[1] .. " B = " .. self.sides[2] .. " C =" .. self.sides[3])
 	print("Perimeter = " .. self.perimeter)
 	print("Area= " .. string.format("%.2f", self.area))
 end
