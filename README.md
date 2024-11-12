@@ -55,10 +55,6 @@ To use the triangle calculator for this version, compile `main.cpp` using the co
 
 Please note that this version is behind the Lua version in some user friendly input aspects but it is still usable. It is the same version as I wrote in college, so that's why. 
 
-## Licensing 
-
-This project is licensed under the MIT License. 
-
 ## Contributing 
 
 Contributers are always welcome here! Please feel free to submit a pull request or open an issue on this project. 
