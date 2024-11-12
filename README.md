@@ -2,11 +2,7 @@
 
 ## A triangle calculator translated from C++ to Lua
 
-This project was originally made in C++ by me in my time during college. It is a multiple file program that contains a version where you can use a triangle calculator in C++ or Lua. You should be able to use it with relative ease. In this code you can see the usage for how to do the following things:
-
-* Linking of custom made files for Lua
-* Usage of Metatables in Lua
-* Writing Metamethods with colons vs dot
+This project was originally made in C++ by me in my time during college. It is a multiple file program that contains a version where you can use a triangle calculator in C++ or Lua. You should be able to use it with relative ease.
 
 ## Prerequisites
 
