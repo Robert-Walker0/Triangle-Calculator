@@ -1,6 +1,8 @@
 require "io"
 
-function getInput()
+local utils = {}
+
+function utils.getInput()
 	local value = io.read()
 	local results = tonumber(value)
 	if results == nil then
@@ -10,3 +12,5 @@ function getInput()
 		return results
 	end
 end
+
+return utils

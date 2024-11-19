@@ -1,5 +1,5 @@
 require "math"
-require "input_utils"
+local input_utils = require("input_utils")
 
 local Triangle = {}
 Triangle.__index = Triangle
@@ -29,7 +29,7 @@ end
 
 function Triangle:getArea()
 	local halved_perimeter = self:getPerimeter()/2
-	return math.sqrt(halved_perimeter * (halved_perimeter - self.side_one) * (halved_perimeter - self.side_two) * (halved_perimeter - self.side_three))
+	return math.sqrt(halved_perimeter * (halved_perimeter - self.sides[1]) * (halved_perimeter - self.sides[2]) * (halved_perimeter - self.sides[3]))
 end
 
 function Triangle:isTriangle()
