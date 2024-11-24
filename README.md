@@ -1,14 +1,13 @@
 # Triangle Calculator
 
-## A triangle calculator
+## A triangle calculator that determines if three sides make a triangle
 
-This project was originally made in C++ by me in my time during college. It is a multiple file program that contains a version where you can use a triangle calculator in C++ or Lua. You should be able to use it with relative ease.
+Originally, this was developed in C++ in my college years. It has now developed into a project in the programming language Lua. You can use C++ with the latests v2.0.2-stable if you want or use the latest version with Lua.
 
 ## Prerequisites
 
 Before downloading this program you should have the following things installed depending on how you want to use this program.
 
-* C++14 or higher
 * Lua 5.1 or higher
 
 ## Installation
@@ -57,22 +56,17 @@ cd src/lua
 lua main.lua
 ```
 
-### C++ Version
+## Older Version using C++
 
-Run the commands specific to your operating system. Follow the prompts afterwards.
+* C++11 or higher is required for older versions
 
-#### Windows
+Use something like this to run it. The slashe
 
-```bash
-g++ src\cpp\main.cpp -o bin\main
-bin\main
-``` 
-
-#### Linux
+Note: The source file is in src/cpp
 
 ```bash
-g++ src/cpp/main.cpp -o bin/main
-bin/main
+    g++ [path to file] -b [output to the bin]
+    [output bin file]
 ```
 
 ## Contributing 
@@ -80,3 +74,4 @@ bin/main
 Contributers are always welcome here! Please feel free to submit a pull request or open an issue on this project. 
 
 Please open an issue before submitting a pull request. 
+
