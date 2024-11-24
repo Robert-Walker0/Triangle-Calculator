@@ -58,15 +58,22 @@ lua main.lua
 
 ## Older Version using C++
 
-* C++11 or higher is required for older versions
+* C++14 or higher is required for older versions
 
 Use something like this to run it. The slashe
 
 Note: The source file is in src/cpp
 
 ```bash
-    g++ [path to file] -b [output to the bin]
-    [output bin file]
+# Building for Windows
+
+g++ src\cpp\main.cpp -o bin\main
+bin\main
+
+# Building for Linux
+
+g++ src/cpp/main.cpp -o bin/main
+bin/main
 ```
 
 ## Contributing 
