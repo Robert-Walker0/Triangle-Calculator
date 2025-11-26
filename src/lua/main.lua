@@ -1,4 +1,4 @@
-local calculations = require("calculations")
+local calculations = require("src.lua.calculations")
 
 repeat
 	print("Would you like to test if the three values you have are a triangle? (y/n): ")
