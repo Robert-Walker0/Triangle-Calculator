@@ -1,17 +1,30 @@
-require("math")
-local input_utils = require("input_utils")
+local input_utils = require("src.lua.input_utils")
+local math = require("math")
 
 local Triangle = {}
+local TRIANGLE_SIDE_LIMIT = 3
 Triangle.__index = Triangle
+
+function Triangle.new(a, b, c)
+	local instance = setmetatable({}, Triangle)
+	instance.sides = { a, b, c }
+	instance.perimeter = instance:getPerimeter()
+	instance.area = instance:getArea()
+	return instance
+end
 
 function Triangle.createTriangle()
 	local instance = setmetatable({}, Triangle)
 	instance.sides = {}
 
-	for sides = 1, 3 do
+	for sides = 1, TRIANGLE_SIDE_LIMIT do
 		print("Enter Side #" .. sides .. ": ")
 		local val = input_utils.getInput()
 		table.insert(instance.sides, val)
+		-- This part below is to create a seperator for the information later to be displayed.
+		if sides == TRIANGLE_SIDE_LIMIT then
+			print()
+		end
 	end
 
 	instance.perimeter = instance:getPerimeter()
@@ -38,15 +51,14 @@ function Triangle:getArea()
 end
 
 function Triangle:isTriangle()
-	local isNaN = tostring(self.area) == tostring(0 / 0)
-	if not ((type(self.area) == "number" and isNaN) or self.area == 0) then
-		return true
-	end
-	return false
+    local a, b, c = self.sides[1], self.sides[2], self.sides[3]
+    return (a + b > c) and (a + c > b) and (b + c > a)
 end
 
 function Triangle:printData()
-	print("A =" .. self.sides[1] .. " B = " .. self.sides[2] .. " C =" .. self.sides[3])
+	print("A = " .. self.sides[1])
+	print("B = " .. self.sides[2])
+	print("C = " .. self.sides[3])
 	print("Perimeter = " .. self.perimeter)
 	print("Area= " .. string.format("%.2f", self.area))
 end
