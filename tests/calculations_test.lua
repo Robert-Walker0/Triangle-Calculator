@@ -49,7 +49,7 @@ function isTriangle_test()
 	luatest.assert_true(result)
 end
 
-function isNotTriangle_tests()
+function isNotTriangle_test()
 	local triangle = test_triangle.new(1, 2, 10)
 	local result = triangle:isTriangle()
 	luatest.assert_false(result)
