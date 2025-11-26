@@ -1,4 +1,4 @@
-require "math"
+require("math")
 local input_utils = require("input_utils")
 
 local Triangle = {}
@@ -8,7 +8,7 @@ function Triangle.createTriangle()
 	local instance = setmetatable({}, Triangle)
 	instance.sides = {}
 
-	for sides=1, 3 do
+	for sides = 1, 3 do
 		print("Enter Side #" .. sides .. ": ")
 		local val = input_utils.getInput()
 		table.insert(instance.sides, val)
@@ -21,20 +21,25 @@ end
 
 function Triangle:getPerimeter()
 	local sum = 0
-	for side=1, #self.sides do 
+	for side = 1, #self.sides do
 		sum = sum + self.sides[side]
 	end
 	return sum
 end
 
 function Triangle:getArea()
-	local halved_perimeter = self:getPerimeter()/2
-	return math.sqrt(halved_perimeter * (halved_perimeter - self.sides[1]) * (halved_perimeter - self.sides[2]) * (halved_perimeter - self.sides[3]))
+	local halved_perimeter = self:getPerimeter() / 2
+	return math.sqrt(
+		halved_perimeter
+			* (halved_perimeter - self.sides[1])
+			* (halved_perimeter - self.sides[2])
+			* (halved_perimeter - self.sides[3])
+	)
 end
 
 function Triangle:isTriangle()
-	local isNaN = tostring(self.area) == tostring(0/0)
-	if not((type(self.area) == "number" and isNaN) or self.area == 0) then
+	local isNaN = tostring(self.area) == tostring(0 / 0)
+	if not ((type(self.area) == "number" and isNaN) or self.area == 0) then
 		return true
 	end
 	return false
