@@ -1,16 +1,14 @@
-require "io"
+require("io")
 
 local utils = {}
 
 function utils.getInput()
-	local value = io.read()
-	local results = tonumber(value)
-	if results == nil then
-		print("Expected number but got string")
-		return getInput()
-	elseif type(results) == "number" then
+	local results = tonumber(io.read())
+	if results then
 		return results
 	end
+	print("Expected number but got string")
+	return utils.getInput()
 end
 
 return utils
