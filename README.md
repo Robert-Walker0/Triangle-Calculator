@@ -1,68 +1,63 @@
 # Triangle Calculator
 
-## A triangle calculator that determines if three sides make a triangle
+## A simple CLI tool that determines whether three side lengths form a triangle
 
-Originally, this was developed in C++ in my college years. It has now developed into a project in the programming language Lua. You can use C++ with the latests v2.0.2-stable if you want or use the latest version with Lua.
+This project was originally developed in C++ during my freshman year of college. It has since been rewritten in Lua with testing (using lunatest) and an updated method for validating triangles.
+
+If you're looking for a simple, clean starting point for creating a triangle calculator, want to learn how to validate basic triangles, or want to compare implementations between C++ and Lua, this project will be of great help to you. 
+
+* Lua and C++ versions are available in `v2.0.2-stable` release.
+* `v2.1.0-stable` contains properly written Lua tests for input and triangles.
+
+## Features
+
+* Command-line interface application
+* Uses Triangle Inequality Theorem to determine the validity of a triangle
+* Calculates perimeter and area
+* Includes tests (Lua)
 
 ## Prerequisites
 
-Before downloading this program you should have the following things installed depending on how you want to use this program.
-
+Make sure you have the following installed: 
 * Lua 5.1 or higher
+
+(For older releases):
+* C++14 or higher
+
+Note: C++ was dropped for the higher version of this program (`v2.1.0-stable`)
 
 ## Installation
 
-1. Clone the repository:
 ```bash
 git clone https://github.com/Robert-Walker0/Triangle-Calculator.git
-```
-
-2. Navigate to your project directory:
-```bash
 cd Triangle-Calculator
 ```
 
 ## Uninstalling 
 
-### Windows
-
-1. Delete the project directory:
 ```bash
+# Windows (Using Command Prompt)
 rmdir "Triangle-Calculator" /s /q
-```
 
-### Linux
-
-1. Delete the project directory:
-```bash
-rm -rf "Triangle-Calculator"
+# Linux
+rm -rf "Triangle-Calculator" 
 ```
 
 ## Usage
 
 To use the triangle calculator, run the commands below and follow the prompts afterwards.
 
-### Lua Version 
-
-#### Windows
+### Lua Usage
 ```bash
-cd .\src\lua
-lua main.lua
+# Windows
+lua .\src\lua\main.lua
+
+# Linux
+lua src/lua/main.lua
 ```
 
-#### Linux
-```bash
-cd src/lua
-lua main.lua
-```
 
-## Older Version using C++
-
-* C++14 or higher is required for older versions
-
-Use something like this to run it. The slashe
-
-Note: The source file is in src/cpp
+### C++ Usage
 
 ```bash
 # Building for Windows
@@ -78,7 +73,6 @@ bin/main
 
 ## Contributing 
 
-Contributers are always welcome here! Please feel free to submit a pull request or open an issue on this project. 
+Contributors are always welcome here! Please feel free to submit a pull request or open an issue on this project. 
 
 Please open an issue before submitting a pull request. 
-
