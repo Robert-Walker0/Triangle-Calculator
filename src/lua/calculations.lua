@@ -21,7 +21,6 @@ function Triangle.createTriangle()
 		print("Enter Side #" .. sides .. ": ")
 		local val = input_utils.getInput()
 		table.insert(instance.sides, val)
-		-- This part below is to create a seperator for the information later to be displayed.
 		if sides == TRIANGLE_SIDE_LIMIT then
 			print()
 		end
@@ -51,8 +50,8 @@ function Triangle:getArea()
 end
 
 function Triangle:isTriangle()
-    local a, b, c = self.sides[1], self.sides[2], self.sides[3]
-    return (a + b > c) and (a + c > b) and (b + c > a)
+	local a, b, c = self.sides[1], self.sides[2], self.sides[3]
+	return (a + b > c) and (a + c > b) and (b + c > a)
 end
 
 function Triangle:printData()
