@@ -1,6 +1,5 @@
 local test_triangle = require("src.lua.calculations")
 local luatest = require("lib.lua.lunatest")
-local input_utils = require("src.lua.input_utils")
 require("io")
 
 ORIGINAL_FUNCTION = io.read
