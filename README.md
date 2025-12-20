@@ -66,6 +66,26 @@ After all of that, I downloaded lunatest to create lua test for my project, comm
 
 I then followed the same process for writing my tests with my GitHub workflow for automated testing.
 
+## What I Learned
+During this project, I’ve picked up important skills and a better understanding of complex ideas, which improved my project development skills:
+
+🤖 Github Automation: 
+
+* New Knowledge: I learned about the process of creating GitHub Workflows to test my code automatically on new pushes or pull requests.
+
+🧪 Unit Testing:
+
+* New  Knowledge: I spent time learning luatest and used it to make the required test to confirm my program worked correctly.
+
+🌑 OOP for Lua Programming:
+
+* New Knowledge: I learned how to work with metatables in Lua to mimic object-oriented programming to create triangles.
+
+👨‍🏫 Writing a Good README:
+
+* New Knowledge: In this project, I’ve become better at constructing READMEs by learning the aspects to make a good one, including technologies, features, running the project, licensing, and video demo.
+
+
 ## Running the Project
 Before using this project you will need to install C++14 or alternatively Lua5.1+.
 
