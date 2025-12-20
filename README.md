@@ -115,3 +115,8 @@ lua src\lua\main.lua
 # Linux
 lua src/lua/main.lua
 ```
+## Video
+
+https://github.com/user-attachments/assets/02ff411c-b50b-4d91-9c59-ef086fb427c8
+
+
