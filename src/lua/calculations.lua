@@ -1,5 +1,4 @@
 local input_utils = require("src.lua.input_utils")
-local math = require("math")
 
 local Triangle = {}
 local TRIANGLE_SIDE_LIMIT = 3
@@ -14,52 +13,44 @@ function Triangle.new(a, b, c)
 end
 
 function Triangle.createTriangle()
-	local instance = setmetatable({}, Triangle)
-	instance.sides = {}
-
-	for sides = 1, TRIANGLE_SIDE_LIMIT do
-		print("Enter Side #" .. sides .. ": ")
+	local sides = {}
+	for sideNum = 1, TRIANGLE_SIDE_LIMIT do
+		print("Enter Side #" .. sideNum .. ": ")
 		local val = input_utils.getInput()
-		table.insert(instance.sides, val)
-		if sides == TRIANGLE_SIDE_LIMIT then
-			print()
-		end
+		table.insert(sides, val)
 	end
-
-	instance.perimeter = instance:getPerimeter()
-	instance.area = instance:getArea()
-	return instance
+	return Triangle.new(unpack(sides))
 end
 
 function Triangle:getPerimeter()
-	local sum = 0
-	for side = 1, #self.sides do
-		sum = sum + self.sides[side]
-	end
-	return sum
+	local a, b, c = unpack(self.sides)
+	return a + b + c
 end
 
 function Triangle:getArea()
-	local halved_perimeter = self:getPerimeter() / 2
+	if not self:isTriangle() then return 0 end
+	local a, b, c = unpack(self.sides)
+	local semiperimeter = self.perimeter  / 2
 	return math.sqrt(
-		halved_perimeter
-			* (halved_perimeter - self.sides[1])
-			* (halved_perimeter - self.sides[2])
-			* (halved_perimeter - self.sides[3])
+		semiperimeter
+			* (semiperimeter - a)
+			* (semiperimeter - b)
+			* (semiperimeter - c)
 	)
 end
 
 function Triangle:isTriangle()
-	local a, b, c = self.sides[1], self.sides[2], self.sides[3]
+	local a, b, c = unpack(self.sides)	
 	return (a + b > c) and (a + c > b) and (b + c > a)
 end
 
 function Triangle:printData()
-	print("A = " .. self.sides[1])
-	print("B = " .. self.sides[2])
-	print("C = " .. self.sides[3])
+	local a, b, c = unpack(self.sides)
+	print("A = " .. a)
+	print("B = " .. b)
+	print("C = " .. c)
 	print("Perimeter = " .. self.perimeter)
-	print("Area= " .. string.format("%.2f", self.area))
+	print("Area = " .. string.format("%.2f", self.area))
 end
 
 return Triangle
