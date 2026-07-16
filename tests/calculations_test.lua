@@ -1,10 +1,8 @@
-local test_triangle = require("src.lua.calculations")
-local luatest = require("lib.lua.lunatest")
-require("io")
-
-ORIGINAL_FUNCTION = io.read
+local Triangle = require("src.lua.calculations")
+local lunatest = require("lib.lua.lunatest")
 
 function createTriangle_test()
+	local original_read = io.read
 	local callCount = 0
 	io.read = function()
 		callCount = callCount + 1
@@ -19,39 +17,40 @@ function createTriangle_test()
 		end
 	end
 
-	local triangle = test_triangle.createTriangle()
-	io.read = ORIGINAL_FUNCTION
+	local triangle = Triangle.createTriangle()
 
-	luatest.assert_not_nil(triangle)
-	luatest.assert_equal(triangle.sides[1], 4)
-	luatest.assert_equal(triangle.sides[2], 5)
-	luatest.assert_equal(triangle.sides[3], 4)
-	luatest.assert_not_nil(triangle.perimeter)
-	luatest.assert_not_nil(triangle.area)
+	lunatest.assert_not_nil(triangle)
+	lunatest.assert_equal(triangle.sides[1], 4)
+	lunatest.assert_equal(triangle.sides[2], 5)
+	lunatest.assert_equal(triangle.sides[3], 4)
+	lunatest.assert_not_nil(triangle.perimeter)
+	lunatest.assert_not_nil(triangle.area)
+
+	io.read = original_read
 end
 
 function getTriangleArea_test()
-	local triangle = test_triangle.new(3, 4, 5)
+	local triangle = Triangle.new(3, 4, 5)
 	local area = triangle:getArea()
-	luatest.assert_equal(string.format("%.2f", area), "6.00")
+	lunatest.assert_equal(string.format("%.2f", area), "6.00")
 end
 
 function getPerimeter_test()
-	local triangle = test_triangle.new(4, 5, 4)
+	local triangle = Triangle.new(4, 5, 4)
 	local perimeter = triangle:getPerimeter()
-	luatest.assert_equal(perimeter, 13)
+	lunatest.assert_equal(perimeter, 13)
 end
 
 function isTriangle_test()
-	local triangle = test_triangle.new(4, 5, 4)
+	local triangle = Triangle.new(4, 5, 4)
 	local result = triangle:isTriangle()
-	luatest.assert_true(result)
+	lunatest.assert_true(result)
 end
 
 function isNotTriangle_test()
-	local triangle = test_triangle.new(1, 2, 10)
+	local triangle = Triangle.new(1, 2, 10)
 	local result = triangle:isTriangle()
-	luatest.assert_false(result)
+	lunatest.assert_false(result)
 end
 
-luatest.run()
+lunatest.run()
