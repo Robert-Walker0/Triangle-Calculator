@@ -11,10 +11,10 @@ If you're looking for a simple, clean starting point for creating a triangle cal
 
 ## Technologies
 
-* C++14
+* C++ 14
 * Lua 5.1+
-* Luaunit
-* Github Actions (Continuous Integration)
+* Lunatest
+* Github Actions (Automated Testing)
 
 Note: C++ was dropped for the higher version of this program (`v2.1.0-stable`)
 
@@ -23,7 +23,7 @@ Note: C++ was dropped for the higher version of this program (`v2.1.0-stable`)
 * Command-line interface application
 * Uses Triangle Inequality Theorem to determine the validity of a triangle
 * Calculates perimeter and area of a triangle
-* Luaunit Testing
+* Lunatest Testing
 
 ## The Process
 This project was assigned to me during my freshman year in college in my first C++ class in 2020. After receiving the project requirements, I began planning how to implement them using my knowledge of C++ up to that point in the class.
@@ -35,7 +35,7 @@ The project requirements were as follows:
 4. Use pass by reference instead of pass by value.
 5. Program must be contained in one file.
 
-To meet these requirements, I designed three main functions: get_sides, reminder, and triangle:
+To meet these requirements, I designed three main functions: `get_sides`, `reminder`, and `triangle`:
 
 The first function, `get_sides` would control the program flow, leading it into using `reminder` and `triangle` functions.
 
@@ -52,7 +52,7 @@ The new changes for this project were the following:
 3. Regular and Automated Tests
 4. Proper Licensing and a README with a video demo of the project
 
-I made the project organization a lot better for the Lua version, spreading it out into three folders: `lib`, `src\lua`, and `tests`. The lib file contained lunatest.lua used for writing unit tests in Lua. src/lua files were used to run all operations on a triangle, display its data, validate input, and run the main code responsible for the project. Finally, the tests tested the operations of a triangle and tested the input function validation to make sure it operated correctly.
+I made the project organization a lot better for the Lua version, spreading it out into three folders: `lib/lua`, `src/lua`, and `tests`. The lib folder contained lunatest.lua used for writing unit tests in Lua. src/lua files were used to run all operations on a triangle, display its data, validate input, and run the main code responsible for the project. Finally, the tests tested the operations of a triangle and tested the input function validation to make sure it operated correctly.
 
 The original triangle function got modularized into four different and more readable functions: `createTriangle`, `getPerimeter`, `getArea`, `new`, and `isTriangle`.
 
@@ -75,7 +75,7 @@ During this project, I’ve picked up important skills and a better understandin
 
 🧪 Unit Testing:
 
-* New  Knowledge: I spent time learning luatest and used it to make the required test to confirm my program worked correctly.
+* New  Knowledge: I spent time learning Lunatest and used it to make the required test to confirm my program worked correctly.
 
 🌑 OOP for Lua Programming:
 
@@ -87,7 +87,7 @@ During this project, I’ve picked up important skills and a better understandin
 
 
 ## Running the Project
-Before using this project you will need to install C++14 or alternatively Lua5.1+.
+Before using this project you will need to install C++ 14 or alternatively Lua 5.1+ onto your machine.
 
 To run the project in your local environment using C++, follow these steps:
 1. Download v2.0.2-stable from Releases (.zip) or (tar.gz)
