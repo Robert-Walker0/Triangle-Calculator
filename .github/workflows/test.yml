@@ -21,9 +21,6 @@ jobs:
       - name: Install Luarocks
         uses: leafo/gh-actions-luarocks@v6
 
-      - name: Install Lua Unit Test
-        run: luarocks install luaunit
-
       - name: Run Unit Tests
         run: |
           lua tests/input_function_test.lua && lua tests/calculations_test.lua
