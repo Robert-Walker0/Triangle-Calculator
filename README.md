@@ -1,5 +1,11 @@
 # Triangle Calculator
 
+![Latest Release](https://img.shields.io/github/v/release/Robert-Walker0/Triangle-Calculator?style=flat-square&color=blue)
+![Build Status](https://img.shields.io/github/actions/workflow/status/Robert-Walker0/Triangle-Calculator/test.yml?branch=main&style=flat-square&label=tests)
+![Lua Version](https://img.shields.io/badge/lua-5.1%2B-blueviolet?style=flat-square)
+![C++ Version](https://img.shields.io/badge/c%2B%2B-14-00599C?style=flat-square&logo=c%2B%2B)
+![License](https://img.shields.io/github/license/Robert-Walker0/Triangle-Calculator?style=flat-square&color=green)
+
 ## A simple CLI made for determining if three side lengths form a triangle
 
 This project was originally developed in C++ during my college freshman years. It has been rewritten using Lua now.
